@@ -1,9 +1,9 @@
 # Docker-validatefiles
 
 
-Alignment module for Hi-C data, based on validateFiles.
-* Input : a pair of Hi-C fastq files
-* Output : a bam file (Lossless, not sorted by coordinate)
+QC module for fastq files, based on validateFiles.
+* Input : a fastq file (either gzipped or not)
+* Output : a report file containing md5sum and validateFile error code (0 means pass)
 
 This repo contains the source files for a docker image stored in duplexa/validatefiles:v1. (we will change the docker hub account soon)
 
