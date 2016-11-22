@@ -1,14 +1,22 @@
+## source file for duplexa/validateFiles:v1
+
 FROM ubuntu:16.04
 MAINTAINER Soo Lee (duplexa@gmail.com)
 
 # 1. general updates & installing necessary Linux components
-RUN apt-get update -y && apt-get install -y wget unzip less vim libkrb5-3 libpng12-0
+RUN apt-get update -y && apt-get install -y wget unzip less vim bzip2 make gcc zlib1g-dev libncurses-dev git libkrb5-3 libpng12-0
 
-# copy files
+# download tools
 WORKDIR /usr/local/bin
-RUN wget http://hgdownload.cse.ucsc.edu/admin/exe/linux.x86_64/validateFiles
+COPY downloads.sh .
+RUN . downloads.sh
+
+# set path
+ENV PATH=/usr/local/bin/validateFiles/:$PATH
+
+# wrapper
 COPY run.sh .
-RUN chmod +x run.sh validateFiles
+RUN chmod +x run.sh
 
 # default command
 CMD ["run.sh"]
