@@ -6,7 +6,7 @@ QC module for any files, based on md5sum.
 * Output : a report file containing md5sum
     * format of output report file
     ```
-    md5sum	8635ebfb7a7307c323da365801caa2a0
+    8635ebfb7a7307c323da365801caa2a0
     ```
 
 This repo contains the source files for a docker image stored in duplexa/md5:v1. (we will change the docker hub account soon)

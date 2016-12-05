@@ -10,5 +10,5 @@ else
 fi
 
 MD=${MD_OUT[0]}
-echo "md5sum	$MD" >> report
+echo "$MD" >> report
 
