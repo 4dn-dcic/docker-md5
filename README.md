@@ -1,22 +1,21 @@
-# Docker-validatefiles
+# Docker-md5
 
 
-QC module for fastq files, based on validateFiles.
-* Input : a fastq file (either gzipped or not)
-* Output : a report file containing md5sum and validateFile error code (0 means pass)
+QC module for any files, based on md5sum.
+* Input : a file (either gzipped or not)
+* Output : a report file containing md5sum
     * format of output report file
     ```
     md5sum	8635ebfb7a7307c323da365801caa2a0
-    validateFiles_errorcode	0
     ```
 
-This repo contains the source files for a docker image stored in duplexa/validatefiles:v1. (we will change the docker hub account soon)
+This repo contains the source files for a docker image stored in duplexa/md5:v1. (we will change the docker hub account soon)
 
 
 ## Cloning the repo
 ```
-git clone https://github.com/4dn-dcic/docker-validatefiles
-cd docker-validatefiles
+git clone https://github.com/4dn-dcic/docker-md5
+cd docker-md5
 ```
 
 ## Resources tools
@@ -25,18 +24,16 @@ The `downloads.sh` file also contains comment lines that specifies the name and 
 
 
 ## Building docker image
-You need docker daemon to rebuild the docker image. If you want to push it to a different docker repo, replace duplexa/validatefiles:v1 with your desired docker repo name. You need permission to push to duplexa/validatefiles:v1.
+You need docker daemon to rebuild the docker image. If you want to push it to a different docker repo, replace duplexa/md5:v1 with your desired docker repo name. You need permission to push to duplexa/md5:v1.
 ```
-docker build -t duplexa/validatefiles:v1 .
-docker push duplexa/validatefiles:v1
+docker build -t duplexa/md5:v1 .
+docker push duplexa/md5:v1
 ```
 
 ## Usage
 Run the following in the container.
 ```
-run.sh <file> <type> <toggle>
+run.sh <file> 
 # file : input file, either gzipped or not
-# type : type of the file to be validate (e.g. 'fastq')
-# toggle : 0 : do not run validatefiles just check md5sum, 1: run validatefiles.
 # output file 'report' is generated.
 ```

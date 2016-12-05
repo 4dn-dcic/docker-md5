@@ -1,4 +1,4 @@
-## source file for duplexa/validateFiles:v1
+## source file for duplexa/md5:v1
 
 FROM ubuntu:16.04
 MAINTAINER Soo Lee (duplexa@gmail.com)
@@ -12,7 +12,6 @@ COPY downloads.sh .
 RUN . downloads.sh
 
 # set path
-ENV PATH=/usr/local/bin/validateFiles/:$PATH
 
 # wrapper
 COPY run.sh .
