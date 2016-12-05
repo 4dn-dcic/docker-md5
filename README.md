@@ -34,8 +34,9 @@ docker push duplexa/validatefiles:v1
 ## Usage
 Run the following in the container.
 ```
-run.sh <file> <type>
+run.sh <file> <type> <toggle>
 # file : input file, either gzipped or not
 # type : type of the file to be validate (e.g. 'fastq')
+# toggle : 0 : do not run validatefiles just check md5sum, 1: run validatefiles.
 # output file 'report' is generated.
 ```
