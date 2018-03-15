@@ -21,7 +21,7 @@ script:
     done
 
 after_success:
-  - if [ $DOCKER" == "on" ]; then
+  - if [ "$DOCKER" == "on" ]; then
       docker login -u="$DOCKER_USERNAME" -p="$DOCKER_PASSWORD"
       if [ "$TRAVIS_BRANCH" == "master" ]; then
         if [ "$TRAVIS_PULL_REQUEST" != false ]; then
