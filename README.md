@@ -3,13 +3,14 @@
 
 QC module for any files, based on md5sum.
 * Input : a file (either gzipped or not)
-* Output : a report file containing md5sum
+* Output : a report file containing regular md5sum (first line) and content (ungzipped) md5sum (second line)
     * format of output report file
     ```
-    8635ebfb7a7307c323da365801caa2a0
+    38008d3eb5f7532896c748172427b524
+    5a6d311c0d8f6d1dd03c1c129061d3b1
     ```
 
-This repo contains the source files for a docker image stored in duplexa/md5:v1. (we will change the docker hub account soon)
+This repo contains the source files for a docker image stored in duplexa/md5:v2. (we will change the docker hub account soon)
 
 
 ## Cloning the repo
@@ -24,10 +25,10 @@ The `downloads.sh` file also contains comment lines that specifies the name and 
 
 
 ## Building docker image
-You need docker daemon to rebuild the docker image. If you want to push it to a different docker repo, replace duplexa/md5:v1 with your desired docker repo name. You need permission to push to duplexa/md5:v1.
+You need docker daemon to rebuild the docker image. If you want to push it to a different docker repo, replace duplexa/md5:v2 with your desired docker repo name. You need permission to push to duplexa/md5:v2.
 ```
-docker build -t duplexa/md5:v1 .
-docker push duplexa/md5:v1
+docker build -t duplexa/md5:v2 .
+docker push duplexa/md5:v2
 ```
 
 ## Usage
