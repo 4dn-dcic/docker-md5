@@ -15,4 +15,3 @@ MD=${MD_OUT[0]}
 CONTENT_MD=${CONTENT_MD_OUT[0]}
 echo "$MD" >> report
 echo "$CONTENT_MD" >> report
-
