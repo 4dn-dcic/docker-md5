@@ -21,8 +21,8 @@ script:
     done
 
 after_success:
-  - if [ $DOCKER" == "on" ]; then
-      docker login -u="$DOCKER_USERNAME" -p="$DOCKER_PASSWORD"
+  - if [ "$DOCKER" == "on" ]; then
+      docker login -u="$DOCKER_USERNAME" -p="$DOCKER_PASSWORD";
       if [ "$TRAVIS_BRANCH" == "master" ]; then
         if [ "$TRAVIS_PULL_REQUEST" != false ]; then
           docker tag $LOCAL_NAME $REMOTE_NAME:$TRAVIS_PULL_REQUEST_BRANCH;
@@ -32,5 +32,6 @@ after_success:
           docker push $REMOTE_NAME:latest;
         fi
       fi
+    fi
   - echo 'good'
   - date
