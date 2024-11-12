@@ -10,8 +10,9 @@ QC module for any files, based on md5sum.
     5a6d311c0d8f6d1dd03c1c129061d3b1
     ```
 
-This repo contains the source files for a docker image stored in duplexa/md5:v2. (we will change the docker hub account soon)
+_The current version of this pipeline pulls the Docker image from a public AWS Elastic Container Registry. If you prefer to pull from Docker Hub (DH), please use the tagged version utilizing DH: `v2_DH`._
 
+This repo contains the source files for a docker image stored in both `4dndcic/md5:v2` and AWS `public.ecr.aws/dcic-4dn/md5:v2`.
 
 ## Cloning the repo
 ```
@@ -25,10 +26,10 @@ The `downloads.sh` file also contains comment lines that specifies the name and 
 
 
 ## Building docker image
-You need docker daemon to rebuild the docker image. If you want to push it to a different docker repo, replace duplexa/md5:v2 with your desired docker repo name. You need permission to push to duplexa/md5:v2.
+You need docker daemon to rebuild the docker image. If you want to push it to a different docker repo, replace 4dndcic/md5:v2 with your desired docker repo name. You need permission to push to 4dndcic/md5:v2.
 ```
-docker build -t duplexa/md5:v2 .
-docker push duplexa/md5:v2
+docker build -t 4dndcic/md5:v2 .
+docker push 4dndcic/md5:v2
 ```
 
 ## Usage
